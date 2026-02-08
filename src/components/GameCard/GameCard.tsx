@@ -16,7 +16,8 @@ export const GameCard: React.FC<GameCardProps> = ({ event, onClick }) => {
   const isLive = status.type.state === 'in';
   const isCompleted = status.type.state === 'post';
 
-  const getTeamLogo = (team: any) => team?.logos?.[0]?.href || team?.logo || '';
+  const getTeamLogo = (team?: { logos?: { href: string }[]; logo?: string }) => 
+    team?.logos?.[0]?.href || team?.logo || '';
 
   const formatDate = (dateString: string) => {
     const date = new Date(dateString);
