@@ -2,6 +2,25 @@
 
 import '@testing-library/jest-dom';
 
+// Suppress React Router future flag warnings in test output
+const originalWarn = console.warn;
+
+global.console.warn = (...args: unknown[]) => {
+  const message = args[0];
+  
+  // Filter out React Router v7 migration warnings
+  if (
+    typeof message === 'string' && 
+    (message.includes('React Router Future Flag') ||
+     message.includes('v7_startTransition') ||
+     message.includes('v7_relativeSplatPath'))
+  ) {
+    return;
+  }
+  
+  originalWarn.call(console, ...args);
+};
+
 // Mock window.matchMedia
 Object.defineProperty(window, 'matchMedia', {
   writable: true,
@@ -25,4 +44,4 @@ class MockIntersectionObserver {
   takeRecords = jest.fn(() => []);
 }
 
-(window as any).IntersectionObserver = MockIntersectionObserver;
+(window as unknown as { IntersectionObserver: typeof MockIntersectionObserver }).IntersectionObserver = MockIntersectionObserver;

@@ -3,6 +3,8 @@ module.exports = {
   preset: 'ts-jest',
   testEnvironment: 'jsdom',
   roots: ['<rootDir>/test', '<rootDir>/src'],
+  silent: false,
+  verbose: false,
   moduleNameMapper: {
     '^.+\\.(css|less|svg|scss|sass)$': '<rootDir>/test/jest_stubs/ignoreFileStub.js',
     '^@/(.*)$': '<rootDir>/src/$1',
