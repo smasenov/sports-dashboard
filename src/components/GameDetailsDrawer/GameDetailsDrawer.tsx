@@ -22,12 +22,12 @@ import CloseIcon from '@mui/icons-material/Close';
 import LocationOnIcon from '@mui/icons-material/LocationOn';
 import PeopleIcon from '@mui/icons-material/People';
 import { useState } from 'react';
-import { useGameSummary } from '../hooks/useGameSummary';
-import { LeagueType } from '../store/leagueSlice';
-import { LoadingState } from './common/LoadingState';
-import { ErrorState } from './common/ErrorState';
-import { TeamLogo, GradientBackground } from './styled/StyledCard';
-import { Team } from '../types/espn';
+import { useGameSummary } from '../../hooks/useGameSummary';
+import { LeagueType } from '../../store/leagueSlice';
+import { LoadingState } from '../common/LoadingState';
+import { ErrorState } from '../common/ErrorState';
+import { TeamLogo, GradientBackground } from '../styled/StyledCard';
+import { Team } from '../../types/espn';
 
 // Actual API structure for leaders
 interface TeamLeadersData {

@@ -10,11 +10,11 @@ import {
   Divider,
 } from '@mui/material';
 import CloseIcon from '@mui/icons-material/Close';
-import { useTeamDetail } from '../hooks/useTeamDetail';
-import { LeagueType } from '../store/leagueSlice';
-import { LoadingState } from './common/LoadingState';
-import { ErrorState } from './common/ErrorState';
-import { TeamLogo, GradientBackground } from './styled/StyledCard';
+import { useTeamDetail } from '../../hooks/useTeamDetail';
+import { LeagueType } from '../../store/leagueSlice';
+import { LoadingState } from '../common/LoadingState';
+import { ErrorState } from '../common/ErrorState';
+import { TeamLogo, GradientBackground } from '../styled/StyledCard';
 
 interface TeamDetailsModalProps {
   teamId: string | null;

@@ -1,0 +1,1 @@
+export { TeamDetailsModal } from './TeamDetailsModal';

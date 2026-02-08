@@ -8,10 +8,8 @@ import routerBindings, { NavigateToResource } from '@refinedev/react-router-v6';
 
 import { store } from './store/store';
 import { dataProvider } from './providers/dataProvider';
-import { Scoreboard } from './pages/Scoreboard';
-import { Teams } from './pages/Teams';
-import { Dashboard } from './pages/Dashboard';
-import { Layout } from './components/Layout';
+import { Scoreboard, Teams, Dashboard } from './pages';
+import { Layout } from './components';
 import SportsBasketballIcon from '@mui/icons-material/SportsBasketball';
 import GroupsIcon from '@mui/icons-material/Groups';
 import DashboardIcon from '@mui/icons-material/Dashboard';

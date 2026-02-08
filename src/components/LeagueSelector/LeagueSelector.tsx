@@ -1,8 +1,8 @@
 import { FormControl, InputLabel, Select, MenuItem, SelectChangeEvent } from '@mui/material';
 import SportsBasketballIcon from '@mui/icons-material/SportsBasketball';
 import SportsFootballIcon from '@mui/icons-material/SportsFootball';
-import { useAppDispatch, useAppSelector } from '../store/hooks';
-import { setLeague, LeagueType } from '../store/leagueSlice';
+import { useAppDispatch, useAppSelector } from '../../store/hooks';
+import { setLeague, LeagueType } from '../../store/leagueSlice';
 
 export const LeagueSelector: React.FC = () => {
   const dispatch = useAppDispatch();

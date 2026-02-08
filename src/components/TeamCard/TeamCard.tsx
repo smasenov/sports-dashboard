@@ -1,6 +1,6 @@
 import { CardContent, Typography, Box } from '@mui/material';
-import { Team } from '../types/espn';
-import { StyledTeamCard, TeamLogo, GradientBackground } from './styled/StyledCard';
+import { Team } from '../../types/espn';
+import { StyledTeamCard, TeamLogo, GradientBackground } from '../styled/StyledCard';
 
 interface TeamCardProps {
   team: Team;

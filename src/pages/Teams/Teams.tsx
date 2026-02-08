@@ -1,13 +1,15 @@
 import { useState } from 'react';
 import { Box, Grid, Typography } from '@mui/material';
 import { useList } from '@refinedev/core';
-import { useAppSelector } from '../store/hooks';
-import { TeamCard } from '../components/TeamCard';
-import { TeamDetailsModal } from '../components/TeamDetailsModal';
-import { LoadingState } from '../components/common/LoadingState';
-import { ErrorState } from '../components/common/ErrorState';
-import { EmptyState } from '../components/common/EmptyState';
-import { TeamItem } from '../types/espn';
+import { useAppSelector } from '../../store/hooks';
+import { 
+  TeamCard, 
+  TeamDetailsModal, 
+  LoadingState, 
+  ErrorState, 
+  EmptyState 
+} from '../../components';
+import { TeamItem } from '../../types/espn';
 
 export const Teams = () => {
   const selectedLeague = useAppSelector((state) => state.league.selectedLeague);

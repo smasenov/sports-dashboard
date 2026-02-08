@@ -1,12 +1,12 @@
 import { Box, Grid, Card, CardContent, Typography, Alert, Paper, Chip } from '@mui/material';
 import { useList } from '@refinedev/core';
-import { useAppSelector } from '../store/hooks';
+import { useAppSelector } from '../../store/hooks';
 import SportsBasketballIcon from '@mui/icons-material/SportsBasketball';
 import GroupsIcon from '@mui/icons-material/Groups';
 import SportsFootballIcon from '@mui/icons-material/SportsFootball';
 import EventIcon from '@mui/icons-material/Event';
-import { LoadingState } from '../components/common/LoadingState';
-import type { Event } from '../types/espn';
+import { LoadingState } from '../../components';
+import type { Event } from '../../types/espn';
 
 export const Dashboard = () => {
   const selectedLeague = useAppSelector((state) => state.league.selectedLeague);

@@ -1,6 +1,6 @@
 import { CardContent, Grid, Typography, Box, Chip } from '@mui/material';
-import { Event } from '../types/espn';
-import { StyledGameCard, TeamLogo, ScoreDisplay, LiveIndicator, StatusBadge } from './styled/StyledCard';
+import { Event } from '../../types/espn';
+import { StyledGameCard, TeamLogo, ScoreDisplay, LiveIndicator, StatusBadge } from '../styled/StyledCard';
 
 interface GameCardProps {
   event: Event;

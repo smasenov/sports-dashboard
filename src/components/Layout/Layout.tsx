@@ -4,7 +4,7 @@ import MenuIcon from '@mui/icons-material/Menu';
 import DashboardIcon from '@mui/icons-material/Dashboard';
 import GroupsIcon from '@mui/icons-material/Groups';
 import { useNavigate, useLocation } from 'react-router-dom';
-import { LeagueSelector } from './LeagueSelector';
+import { LeagueSelector } from '../LeagueSelector';
 
 const drawerWidth = 240;
 

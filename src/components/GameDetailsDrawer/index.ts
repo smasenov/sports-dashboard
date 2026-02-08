@@ -1,0 +1,1 @@
+export { GameDetailsDrawer } from './GameDetailsDrawer';
