@@ -33,3 +33,7 @@ dist-ssr
 # Cursor AI rules (personal development preferences)
 .cursorrules
 .cursor/
+
+# Testing
+.jest-cache
+coverage

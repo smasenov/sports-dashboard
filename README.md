@@ -30,6 +30,7 @@ Open `http://localhost:5173` in your browser.
 - **Redux Toolkit 2.11** - Global state (league selection)
 - **Emotion 11.14** - CSS-in-JS styling
 - **Vite 5.4** - Build tool and dev server
+- **Jest 29** + **React Testing Library** - Testing framework
 
 ## 📋 Features
 
@@ -43,10 +44,13 @@ Open `http://localhost:5173` in your browser.
 ## 🎯 Key Commands
 
 ```bash
-npm run dev      # Start development server
-npm run build    # Build for production
-npm run lint     # Check code quality
-npm run preview  # Preview production build
+npm run dev           # Start development server
+npm run build         # Build for production
+npm run lint          # Check code quality
+npm run preview       # Preview production build
+npm test              # Run tests
+npm run test:watch    # Run tests in watch mode
+npm run test:coverage # Run tests with coverage report
 ```
 
 ## 📁 Project Structure
@@ -56,11 +60,18 @@ src/
 ├── components/     # UI components
 │   ├── common/    # LoadingState, ErrorState, EmptyState
 │   └── styled/    # Custom Emotion components
+├── config/        # Routes and resources configuration
 ├── hooks/         # React Query hooks (useScoreboard, useTeams, etc.)
 ├── pages/         # Dashboard, Scoreboard, Teams
 ├── store/         # Redux store (league selection)
 ├── types/         # TypeScript definitions
 └── providers/     # Data provider for Refine
+
+test/
+├── components/    # Component tests
+├── hooks/         # Hook tests
+├── store/         # Redux tests
+└── utils/         # Test utilities and mock data
 ```
 
 ## 🔌 API
@@ -77,6 +88,31 @@ Uses ESPN's public API (no auth required):
 - **Redux Toolkit** for UI state (selected league only)
 - **Custom hooks** wrap all API calls with proper TypeScript types
 - **Responsive design** using MUI Grid system
+- **Testing** with Jest and React Testing Library
+
+## 🧪 Testing
+
+The project includes comprehensive test coverage:
+
+- **Unit tests** for Redux slices and custom hooks
+- **Component tests** for UI components
+- **Integration tests** using React Testing Library
+- **Mock data** for consistent test scenarios
+
+Test coverage includes:
+- ✅ Custom React Query hooks (`useScoreboard`, `useTeams`, etc.)
+- ✅ Redux state management (`leagueSlice`)
+- ✅ Common components (`LoadingState`, `ErrorState`, `EmptyState`)
+- ✅ Interactive components (`LeagueSelector`)
+
+Run tests with:
+```bash
+npm test              # Run all tests
+npm run test:watch    # Watch mode
+npm run test:coverage # With coverage report
+```
+
+Target coverage: 70% (branches, functions, lines, statements)
 
 ## ⚠️ Important Notes
 
