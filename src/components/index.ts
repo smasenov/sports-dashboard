@@ -7,9 +7,7 @@ export * from './TeamCard';
 export * from './TeamDetailsModal';
 
 // Common components
-export * from './common/EmptyState/EmptyState';
-export * from './common/ErrorState/ErrorState';
-export * from './common/LoadingState/LoadingState';
+export * from './common';
 
 // Styled components
 export * from './styled/StyledCard';
