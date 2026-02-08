@@ -187,6 +187,9 @@ export const Dashboard = () => {
                 p: 3,
                 borderRadius: 2,
                 background: 'linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%)',
+                height: '100%',
+                display: 'flex',
+                flexDirection: 'column',
               }}
             >
               <Box display="flex" alignItems="center" gap={2} mb={2}>
@@ -227,6 +230,9 @@ export const Dashboard = () => {
                 p: 3,
                 borderRadius: 2,
                 background: 'linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%)',
+                height: '100%',
+                display: 'flex',
+                flexDirection: 'column',
               }}
             >
               <Box display="flex" alignItems="center" gap={2} mb={2}>

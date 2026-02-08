@@ -1,10 +1,9 @@
 import { useState } from 'react';
 import { Box, AppBar, Toolbar, Drawer, List, ListItem, ListItemButton, ListItemIcon, ListItemText, Container, IconButton, useMediaQuery, useTheme } from '@mui/material';
 import MenuIcon from '@mui/icons-material/Menu';
-import DashboardIcon from '@mui/icons-material/Dashboard';
-import GroupsIcon from '@mui/icons-material/Groups';
 import { useNavigate, useLocation } from 'react-router-dom';
 import { LeagueSelector } from '../LeagueSelector';
+import { resources } from '../../config';
 
 const drawerWidth = 240;
 
@@ -23,34 +22,31 @@ export const Layout: React.FC<LayoutProps> = ({ children }) => {
     setMobileOpen(!mobileOpen);
   };
 
-  const menuItems = [
-    { text: 'Dashboard', icon: <DashboardIcon />, path: '/' },
-    { text: 'Scoreboard', icon: <DashboardIcon />, path: '/scoreboard' },
-    { text: 'Teams', icon: <GroupsIcon />, path: '/teams' },
-  ];
-
   const drawer = (
     <>
       {/* Spacer for fixed AppBar */}
       <Box sx={{ height: 64 }} />
       <Box sx={{ overflow: 'auto', mt: 1 }}>
         <List>
-          {menuItems.map((item) => (
-            <ListItem key={item.text} disablePadding>
-              <ListItemButton
-                selected={location.pathname === item.path}
-                onClick={() => {
-                  navigate(item.path);
-                  if (isMobile) {
-                    setMobileOpen(false);
-                  }
-                }}
-              >
-                <ListItemIcon>{item.icon}</ListItemIcon>
-                <ListItemText primary={item.text} />
-              </ListItemButton>
-            </ListItem>
-          ))}
+          {resources.map((resource) => {
+            const path = typeof resource.list === 'string' ? resource.list : '/';
+            return (
+              <ListItem key={resource.name} disablePadding>
+                <ListItemButton
+                  selected={location.pathname === path}
+                  onClick={() => {
+                    navigate(path);
+                    if (isMobile) {
+                      setMobileOpen(false);
+                    }
+                  }}
+                >
+                  <ListItemIcon>{resource.meta?.icon}</ListItemIcon>
+                  <ListItemText primary={resource.meta?.label || resource.name} />
+                </ListItemButton>
+              </ListItem>
+            );
+          })}
         </List>
       </Box>
     </>
@@ -65,12 +61,12 @@ export const Layout: React.FC<LayoutProps> = ({ children }) => {
           zIndex: (theme) => theme.zIndex.drawer + 1,
           bgcolor: 'white',
           color: '#000',
-          boxShadow: 1,
+          boxShadow: 'none',
           borderBottom: '1px solid',
           borderColor: 'divider',
         }}
       >
-        <Toolbar>
+        <Toolbar sx={{ my: '6px' }}>
           {isMobile && (
             <IconButton
               color="inherit"
